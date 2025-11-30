@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#2A3B55"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/viewStrip"
+            android:layout_width="6dp"
+            android:layout_height="0dp"
+            android:background="@color/Ford_Blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivIconeTreino"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintStart_toEndOf="@id/viewStrip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#90A4AE" />
+
+        <TextView
+            android:id="@+id/tvTreinoDia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            android:textAllCaps="true"
+            android:textColor="#90A4AE"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivIconeTreino"
+            app:layout_constraintStart_toEndOf="@+id/ivIconeTreino"
+            app:layout_constraintTop_toTopOf="@+id/ivIconeTreino"
+            tools:text="SEGUNDA" />
+
+        <TextView
+            android:id="@+id/tvTreinoTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/dividerVertical"
+            app:layout_constraintStart_toEndOf="@id/viewStrip"
+            app:layout_constraintTop_toBottomOf="@+id/ivIconeTreino"
+            tools:text="Treino A - Peito e Tríceps" />
+
+        <TextView
+            android:id="@+id/tvTreinoDetalhes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#B0BEC5"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvTreinoTitulo"
+            app:layout_constraintStart_toStartOf="@+id/tvTreinoTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/tvTreinoTitulo"
+            tools:text="5 exercícios | 40 min" />
+
+        <View
+            android:id="@+id/dividerVertical"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="#26FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/llPlayAction"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llPlayAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/ibVerTreino"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_play_circle"
+                app:tint="@color/Azul_ceu_claro" />
+
+            <TextView
+                android:id="@+id/tvLabelVerTreino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:text="INICIAR"
+                android:textColor="@color/Azul_ceu_claro"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

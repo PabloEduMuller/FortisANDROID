@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="Perfil"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_perfil"
+        />
+
+    <item
+        android:id="@+id/nav_ficha_treinos"
+        android:title="Treinos"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_ficha_treino"
+        />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/navigation_treino_do_dia"
+        android:title="Treino do Dia"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_play_circle"
+        />
+
+    <item
+        android:id="@+id/nav_chat_suporte"
+        android:title="Ajuda"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_chat_suporte"
+
+        />
+</menu>

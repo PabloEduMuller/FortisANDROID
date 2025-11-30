@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#457abe</color>
+    <color name="blue_dark">#0a0d40</color>
+    <color name="branco_amarelado">#fffbd8</color>Ford Blue
+    <color name="Ford_Blue">#0000ff</color>
+    <color name ="Azul_ceu_claro">#87cefa</color>
+    <color name ="cinza_claro">#909090</color>
+    <color name="container_background_color">#FFFBEB</color>
+
+    <color name="primary_color">#007BFF</color>
+    <color name="primary_dark_color">#0056b3</color>
+    <color name="accent_color">#FF4081</color>
+    <color name="vermelho">#C30000</color>
+
+    <color name="background_color">#F4F4F4</color>
+    <color name="card_background_color">#FFFFFF</color>
+    <color name="primary_text_color">#212121</color>
+    <color name="secondary_text_color">#757575</color>
+
+    <color name="bottom_nav_item_color_active">#007BFF</color>
+    <color name="bottom_nav_item_color_inactive">#757575</color>
+</resources>

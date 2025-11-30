@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
+    <ImageButton
+        android:id="@+id/ibSairSistema"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/baseline_exit_to_app_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibConfiguracao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/baseline_reorder_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFortisLogo"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:background="@drawable/logo_fortis"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ibSairSistema"
+        app:layout_constraintEnd_toStartOf="@id/ibConfiguracao" />
+
+    <View
+        android:id="@+id/HomeContainer"
+        style="@style/ContainerComponents"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivFortisLogo" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/HomeContainer"
+        app:layout_constraintBottom_toBottomOf="@id/HomeContainer"
+        app:layout_constraintStart_toStartOf="@id/HomeContainer"
+        app:layout_constraintEnd_toEndOf="@id/HomeContainer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvProgressoTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROGRESSO TREINOS"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/Ford_Blue"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/faq_background"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TREINOS CONCLUIDOS DA SEMANA"
+                    android:textColor="@android:color/darker_gray"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"/>
+
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+                <include layout="@layout/item_progresso_dia" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAIORES CARGAS DA SEMANA"
+                android:textColor="@android:color/darker_gray"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                style="@style/MaxLiftItem"
+                android:text="Supino - 80 kgs"/>
+            <TextView
+                style="@style/MaxLiftItem"
+                android:text="Rosca martelo - 20 kgs"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar para o Inicio"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Ford_Blue"
+        app:itemIconTint="@color/color_item_bottom_nav"
+        app:itemTextColor="@color/color_item_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/app_menu_file" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

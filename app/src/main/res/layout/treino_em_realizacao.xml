@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background">
+
+    <!-- Top Bar (Seu template) -->
+    <ImageButton
+        android:id="@+id/ibSairSistema"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/baseline_exit_to_app_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibConfiguracao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/baseline_reorder_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFortisLogo"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:background="@drawable/logo_fortis"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ibSairSistema"
+        app:layout_constraintEnd_toStartOf="@id/ibConfiguracao" />
+
+    <!-- Container bege (Seu template) -->
+    <View
+        android:id="@+id/HomeContainer"
+        style="@style/ContainerComponents"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivFortisLogo" />
+
+    <!-- ScrollView (Seu template) -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="@id/HomeContainer"
+        app:layout_constraintBottom_toBottomOf="@id/HomeContainer"
+        app:layout_constraintStart_toStartOf="@id/HomeContainer"
+        app:layout_constraintEnd_toEndOf="@id/HomeContainer">
+
+        <!-- CONTEÚDO DA TELA DE TREINO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Título do Exercício -->
+            <TextView
+                android:id="@+id/tvExercicioTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUPINO RETO"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/Ford_Blue"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Contador de Séries -->
+            <TextView
+                android:id="@+id/tvSerieContador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Série 1 de 4"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Campos de Carga e Repetições -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:gravity="center">
+
+                <!-- Campo Carga -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_field_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginEnd="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carga: "
+                        android:textColor="@android:color/white"/>
+                    <EditText
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@android:color/white"
+                        android:text="___"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" KG"
+                        android:textColor="@android:color/white"/>
+                </LinearLayout>
+
+                <!-- Campo Repetições -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_field_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repetições: "
+                        android:textColor="@android:color/white"/>
+                    <EditText
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:textColor="@android:color/white"
+                        android:text="___"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Botão Concluir Série -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnConcluirSerie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONCLUIR SÉRIE"
+                android:background="@drawable/button_dark_rounded"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Timer de Descanso -->
+            <TextView
+                android:id="@+id/tvTimerDescanso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCANSO: 01:30"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/Ford_Blue"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Botão Cronometrar Descanso -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnCronometrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CRONOMETRAR DESCANSO"
+                android:background="@drawable/button_gray_rounded"
+                android:textColor="@android:color/white"
+                android:paddingHorizontal="24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"/>
+
+            <!-- Botões de Rodapé (Concluir/Finalizar) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnConcluirExercicio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CONCLUIR EXERCÍCIO"
+                    android:background="@drawable/button_split_left_blue"
+                    android:textColor="@android:color/white"
+                    android:layout_marginEnd="-2dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFinalizarTreino"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="FINALIZAR TREINO"
+                    android:background="@drawable/button_split_right_red"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="-2dp"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Barra de Navegação (Seu template) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Ford_Blue"
+        app:itemIconTint="@color/color_item_bottom_nav"
+        app:itemTextColor="@color/color_item_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/app_menu_file"
+        tools:layout_editor_absoluteX="-7dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/blue_dark"
+    tools:context=".ui.suporte.FaqActivity">
+
+    <ImageButton
+        android:id="@+id/ibVoltar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/baseline_exit_to_app_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibConfiguracao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/baseline_reorder_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFortisLogo"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        android:background="@drawable/logo_fortis"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ibVoltar"
+        app:layout_constraintEnd_toStartOf="@id/ibConfiguracao" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainContentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardBackgroundColor="@color/branco_amarelado"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivFortisLogo">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvTituloPagina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PERGUNTAS FREQUENTES"
+                    android:textColor="@color/blue_dark"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"/>
+
+                <TextView
+                    style="@style/TermosTitulo"
+                    android:text="Como altero meu treino?"/>
+                <TextView
+                    style="@style/TermosParagrafo"
+                    android:text="Vá para a tela 'Meus Treinos', selecione o treino que deseja alterar e clique no ícone de edição."/>
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    style="@style/TermosTitulo"
+                    android:text="Como altero o dia do treino?"/>
+                <TextView
+                    style="@style/TermosParagrafo"
+                    android:text="Na tela de edição do treino, você pode selecionar o dia da semana desejado no menu."/>
+
+                <View style="@style/Divider" />
+
+                <TextView
+                    style="@style/TermosTitulo"
+                    android:text="Como inicio meu treino?"/>
+                <TextView
+                    style="@style/TermosParagrafo"
+                    android:text="Na tela Home, clique no card do treino de hoje, ou vá em 'Treino do Dia' na barra de navegação."/>
+
+                <View style="@style/Divider" />
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/Ford_Blue"
+        app:itemIconTint="@color/color_item_bottom_nav"
+        app:itemTextColor="@color/color_item_bottom_nav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/app_menu_file" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
